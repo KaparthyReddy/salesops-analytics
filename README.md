@@ -49,7 +49,6 @@ layout are documented in [`powerbi/`](powerbi/).
 
 ## Status
 - ETL pipeline, schema, and tests: **complete and verified** (see results above)
-- Power BI report: **in progress**
 
 ## License
 MIT — see [LICENSE](LICENSE).
