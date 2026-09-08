@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: salesops_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-salesops}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-salesops}
+      POSTGRES_DB: ${POSTGRES_DB:-salesops}
+    ports:
+      - "5432:5432"
+    volumes:
+      - salesops_pgdata:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d
+
+volumes:
+  salesops_pgdata:
