@@ -13,7 +13,9 @@ def get_engine(db_config: DBConfig) -> Engine:
     return create_engine(db_config.sqlalchemy_url)
 
 
-def load_table(df: pd.DataFrame, table_name: str, engine: Engine, if_exists: str = "append") -> None:
+def load_table(
+    df: pd.DataFrame, table_name: str, engine: Engine, if_exists: str = "append"
+    ) -> None:
     df.to_sql(
         table_name,
         engine,

@@ -1,11 +1,6 @@
 -- Seed reference dimensions
-
-INSERT INTO salesops.dim_region (region_name, sales_manager) VALUES
-    ('North', 'Aditi Rao'),
-    ('South', 'Vikram Shah'),
-    ('East',  'Priya Nair'),
-    ('West',  'Rohan Mehta')
-ON CONFLICT DO NOTHING;
+-- Note: dim_region is intentionally NOT seeded here. The ETL pipeline
+-- derives real region names from the source data and owns that table.
 
 -- Populate dim_date for 2022-01-01 through 2026-12-31
 INSERT INTO salesops.dim_date (
